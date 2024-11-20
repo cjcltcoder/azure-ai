@@ -5,6 +5,8 @@ const fs = require("fs");
 const path = require("path");
 require("dotenv").config();
 const cors = require("cors");
+const swaggerUi = require("swagger-ui-express");
+const swaggerJsdoc = require("swagger-jsdoc");
 
 const app = express();
 const port = process.env.PORT;
@@ -40,7 +42,63 @@ const upload = multer({
   },
 });
 
+// Setting up Swagger for API Documentation
+const swaggerOptions = {
+  definition: {
+    openapi: "3.0.0",
+    info: {
+      title: "Image/URL Analysis APIs",
+      version: "1.0.0",
+      description: "APIs to upload/provide and analyze images/URLs using Azure Vision Studio",
+    },
+    servers: [
+      {
+        url: `http://localhost:${port}`,
+      },
+    ],
+  },
+  apis: ["./server.js"],
+};
+
+const swaggerSpec = swaggerJsdoc(swaggerOptions);
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+
+
 //Route for uploading and analyzing image
+/**
+ * @swagger
+ * /image:
+ *   post:
+ *     summary: Upload an image for analysis
+ *     description: Upload an image and get analysis from Azure Vision Studio.
+ *     tags: [Image Analysis]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         multipart/form-data:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               image:
+ *                 type: string
+ *                 format: binary
+ *                 description: The image file to upload
+ *     responses:
+ *       200:
+ *         description: Analysis of the uploaded image
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               example:
+ *                 categories: []
+ *                 description: {}
+ *                 tags: []
+ *       400:
+ *         description: No file uploaded or invalid input
+ *       500:
+ *         description: Server error
+ */
 app.post("/image", upload.single("image"), async (req, res) => {
   if (!req.file) {
     return res.status(400).send({ error: "No file uploaded!" });
@@ -73,6 +131,40 @@ app.post("/image", upload.single("image"), async (req, res) => {
 });
 
 //Route to analyze image from a link
+/**
+ * @swagger
+ * /link:
+ *   post:
+ *     summary: Analyze an image from an URL
+ *     description: Provide an URL to analyze the image using Azure Vision Studio.
+ *     tags: [Image Analysis]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               imageURL:
+ *                 type: string
+ *                 description: The URL of the image to analyze
+ *                 example: "https://example.com/image.jpg"
+ *     responses:
+ *       200:
+ *         description: Analysis of the image from the provided URL
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               example:
+ *                 categories: []
+ *                 description: {}
+ *                 tags: []
+ *       400:
+ *         description: No URL provided or invalid input
+ *       500:
+ *         description: Server error
+ */
 app.post("/link", async (req, res) => {
   const { imageURL } = req.body;
   if (!imageURL) {
