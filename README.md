@@ -17,7 +17,7 @@ Responses:
 o	Description: Successfully analyzed the colors from the image.
 o	Example Using Postman:
 
-![Picture1](https://github.com/user-attachments/assets/a5689b18-4da5-4639-9e68-317b3c390701)
+![picture1](https://github.com/user-attachments/assets/202e5dae-83a6-4e09-b163-9c2cfff69b8b)
  
 •	400 Bad Request: No file uploaded or invalid input.
 •	500 Internal Server Error: If there is an error during analysis.
@@ -35,7 +35,7 @@ Responses:
 o	Description: Successfully analyzed the categories from the image.
 o	Example Using Postman:
 
- ![Picture2](https://github.com/user-attachments/assets/3cb85354-c3a3-4fde-a039-bbaddf1b2683)
+![picture2](https://github.com/user-attachments/assets/0e9c9e72-c3a7-42bb-9459-2ca4da2d5814)
 
 •	400 Bad Request: No file uploaded or invalid input.
 •	500 Internal Server Error: If there is an error during analysis.
@@ -53,7 +53,7 @@ Responses:
 o	Description: Successfully analyzed the captions from the image.
 o	Example Using Postman:
 
-![Picture3](https://github.com/user-attachments/assets/64111cd8-efcd-4b3a-a32d-53140476aec8)
+![picture3](https://github.com/user-attachments/assets/e4e4434b-2a26-4d62-bee0-f6633135fff2)
  
 •	400 Bad Request: No file uploaded or invalid input.
 •	500 Internal Server Error: If there is an error during analysis.
@@ -71,7 +71,7 @@ Responses:
 o	Description: Successfully analyzed the tags from the image.
 o	Example Using Postman:
 
-![Picture4](https://github.com/user-attachments/assets/1245a2a2-f097-4ae7-ae33-d65f305bc8f7)
+![picture4](https://github.com/user-attachments/assets/4ab1e645-16e9-4f8e-9077-d6510e4719ef)
  
 •	400 Bad Request: No file uploaded or invalid input.
 •	500 Internal Server Error: If there is an error during analysis.
@@ -89,7 +89,7 @@ Responses:
 o	Description: Successfully analyzed the colors from the image URL.
 o	Example Using Postman:
 
- ![Picture5](https://github.com/user-attachments/assets/6e00efed-8f9a-4d8b-83d4-7028c06fdc21)
+![picture5](https://github.com/user-attachments/assets/46cf978c-1be7-4519-a784-1e605d68da88)
 
 •	400 Bad Request: No URL provided or invalid input.
 •	500 Internal Server Error: If there is an error during analysis.
@@ -107,7 +107,7 @@ Responses:
 o	Description: Successfully analyzed the categories from the image URL.
 o	Example Using Postman:
 
- ![Picture6](https://github.com/user-attachments/assets/fcd04f42-3f6c-4b01-ab4e-425b213cc202)
+![picture6](https://github.com/user-attachments/assets/4c54c173-07a1-4e37-86e3-c925fe1fac80)
 
 •	400 Bad Request: No URL provided or invalid input.
 •	500 Internal Server Error: If there is an error during analysis.
@@ -125,7 +125,7 @@ Responses:
 o	Description: Successfully analyzed the captions from the image URL.
 o	Example Using Postman:
 
- ![Picture7](https://github.com/user-attachments/assets/acfaf847-5ba9-4d05-a7b3-9d267cea161c)
+![picture7](https://github.com/user-attachments/assets/c0713773-a9a6-410e-aa5f-f6cc8fd856db)
 
 •	400 Bad Request: No URL provided or invalid input.
 •	500 Internal Server Error: If there is an error during analysis.
@@ -143,7 +143,7 @@ Responses:
 o	Description: Successfully analyzed the tags from the image URL.
 o	Example Using Postman:
 
- ![Picture8](https://github.com/user-attachments/assets/5bb7132b-3e17-49e2-85b4-7802cea2516d)
+![picture8](https://github.com/user-attachments/assets/6937e8ab-10e3-41ac-95e3-bcab25a46a38)
 
 •	400 Bad Request: No URL provided or invalid input.
 •	500 Internal Server Error: If there is an error during analysis.
